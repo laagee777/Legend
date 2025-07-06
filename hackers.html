@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🚨 Hacker Detected! 🚨</title>
+  <style>
+    body {
+      background-color: black;
+      color: lime;
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+      padding-top: 10%;
+    }
+    .alert {
+      font-size: 2em;
+      animation: blink 0.7s infinite alternate;
+    }
+    @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="alert">🚨 Hacker Detected! Tracing IP... 🛰️</div>
+  <p id="status">Initiating counter-hack...</p>
+
+  <script>
+    let counter = 0;
+    const status = document.getElementById('status');
+    const messages = [
+      "Encrypting keyboard...",
+      "Launching pizza at hacker's location 🍕",
+      "Reverse Googling your memes...",
+      "Deploying cats 🐱 to distract...",
+      "Just kidding. 😎 You're safe... for now."
+    ];
+
+    function updateStatus() {
+      if (counter < messages.length) {
+        status.textContent = messages[counter];
+        counter++;
+        setTimeout(updateStatus, 2000);
+      } else {
+        document.body.innerHTML += "<h2>You've been giggled 😂</h2>";
+      }
+    }
+
+    setTimeout(updateStatus, 3000);
+  </script>
+</body>
+</html>
